@@ -8,6 +8,8 @@ tree
 |-- bst   # binary search tree
 |-- btree # B+ tree
 |-- rbt   # read black tree
-`-- sbbst # self balanced binary search tree
+|-- sbbst # self balanced binary search tree
+|-- test  # test programs
+`-- util  # utility programs
 
 

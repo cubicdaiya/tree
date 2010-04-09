@@ -6,9 +6,8 @@ Copyright(C) 2010  Tatsuhiko Kubo <cubicdaiya@gmail.com>
 tree
 |-- avl   # AVL tree
 |-- bst   # binary search tree
-|-- btree # B+ tree
+|-- btree # B-tree
 |-- rbt   # read black tree
-|-- sbbst # self balanced binary search tree
 |-- test  # test programs
 `-- util  # utility programs
 

@@ -38,6 +38,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdbool.h>
 #include <mpool.h>
 
 #define BST_MALLOC(p, siz)			\

@@ -41,20 +41,6 @@
 #include <stdbool.h>
 #include <mpool.h>
 
-#define BST_MALLOC(p, siz)			\
-  do {                                          \
-    if (((p) = malloc(siz)) == NULL) {          \
-      fprintf(stderr, "malloc failed");         \
-      exit(-1);                                 \
-    }                                           \
-  } while(false)
-
-#define BST_FREE(p)				\
-  do {                                          \
-    free(p);                                    \
-    (p) = NULL;                                 \
-  } while(false)
-
 typedef int bst_elem_t;
 
 typedef struct bst_node_s {

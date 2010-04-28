@@ -44,9 +44,9 @@
 typedef int bst_elem_t;
 
 typedef struct bst_node_s {
-  struct bst_node_s *left;
-  struct bst_node_s *right;
-  bst_elem_t elem;
+    struct bst_node_s *left;
+    struct bst_node_s *right;
+    bst_elem_t elem;
 } bst_node_t;
 
 bst_node_t *bst_create(bst_elem_t elem, mpool_t **pool);

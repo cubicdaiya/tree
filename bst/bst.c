@@ -40,7 +40,7 @@ static bst_node_t *bst_node_create(bst_elem_t elem, mpool_t **pool);
 
 static bst_node_t *bst_node_create(bst_elem_t elem, mpool_t **pool) {
     bst_node_t *node;
-    node = mpool_alloc(pool, sizeof(*node));
+    node = mpool_alloc(sizeof(*node), *pool);
     node->left  = NULL;
     node->right = NULL;
     node->elem  = elem;

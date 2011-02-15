@@ -9,14 +9,14 @@ static void bst_test002(void);
 static void bst_test003(void);
 
 static void bst_test001(void) {
-    mpool_t *pool    = mpool_create(1024);
+    mpool_t    *pool = mpool_create(1024);
     bst_node_t *root = bst_create(0, &pool);
     CU_ASSERT(root->elem == 0);
     bst_destroy(pool);
 }
 
 static void bst_test002(void) {
-    mpool_t *pool    = mpool_create(1024);
+    mpool_t    *pool = mpool_create(1024);
     bst_node_t *root = bst_create(0, &pool);
     CU_ASSERT(root->elem == 0);
     for (int i=0;i<10;++i) {
@@ -29,7 +29,7 @@ static void bst_test002(void) {
 }
 
 static void bst_test003(void) {
-    mpool_t *pool    = mpool_create(1024);
+    mpool_t    *pool = mpool_create(1024);
     bst_node_t *root = bst_create(0, &pool);
     CU_ASSERT(root->elem == 0);
     bst_insert(root, 3,  &pool);

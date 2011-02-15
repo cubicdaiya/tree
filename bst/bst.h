@@ -50,8 +50,9 @@ typedef struct bst_node_s {
 } bst_node_t;
 
 bst_node_t *bst_create(bst_elem_t elem, mpool_t **pool);
-bool bst_insert(bst_node_t *node, bst_elem_t elem, mpool_t **pool);
-bool bst_search(bst_node_t *node, bst_elem_t elem);
+bool bst_insert(bst_node_t *root, bst_elem_t elem, mpool_t **pool);
+bool bst_search(bst_node_t *root, bst_elem_t elem);
+bool bst_delete(bst_node_t *root, bst_elem_t elem, mpool_t **pool);
 void bst_destroy(mpool_t *pool);
 
 

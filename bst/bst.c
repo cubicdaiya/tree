@@ -39,12 +39,12 @@
 static bst_node_t *bst_node_create(bst_elem_t elem, mpool_t **pool);
 
 static bst_node_t *bst_node_create(bst_elem_t elem, mpool_t **pool) {
-    bst_node_t *node;
-    node = mpool_alloc(sizeof(*node), *pool);
-    node->left  = NULL;
-    node->right = NULL;
-    node->elem  = elem;
-    return node;
+    bst_node_t *root;
+    root = mpool_alloc(sizeof(*root), *pool);
+    root->left  = NULL;
+    root->right = NULL;
+    root->elem  = elem;
+    return root;
 }
 
 bst_node_t *bst_create(bst_elem_t elem, mpool_t **pool) {
@@ -53,13 +53,13 @@ bst_node_t *bst_create(bst_elem_t elem, mpool_t **pool) {
     return root;
 }
 
-bool bst_insert(bst_node_t *node, bst_elem_t elem, mpool_t **pool) {
+bool bst_insert(bst_node_t *root, bst_elem_t elem, mpool_t **pool) {
     bst_node_t **branch;
     
-    if (elem < node->elem) {
-        branch = &node->left;
-    } else if (elem > node->elem) {
-        branch = &node->right;
+    if (elem < root->elem) {
+        branch = &root->left;
+    } else if (elem > root->elem) {
+        branch = &root->right;
     } else {
         return false;
     }
@@ -72,13 +72,13 @@ bool bst_insert(bst_node_t *node, bst_elem_t elem, mpool_t **pool) {
     }
 }
 
-bool bst_search(bst_node_t *node, bst_elem_t elem) {
+bool bst_search(bst_node_t *root, bst_elem_t elem) {
     bst_node_t *branch;
     
-    if (elem < node->elem) {
-        branch = node->left;
-    } else if (elem > node->elem) {
-        branch = node->right;
+    if (elem < root->elem) {
+        branch = root->left;
+    } else if (elem > root->elem) {
+        branch = root->right;
     } else {
         return true;
     }
@@ -88,6 +88,10 @@ bool bst_search(bst_node_t *node, bst_elem_t elem) {
     } else {
         return bst_search(branch, elem);
     }
+}
+
+bool bst_delete(bst_node_t *root, bst_elem_t elem, mpool_t **pool) {
+    return true;
 }
 
 void bst_destroy(mpool_t *pool) {

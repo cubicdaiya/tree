@@ -1,2 +1,3 @@
 *.o
 test/bst_test
+.sconsign.dblite

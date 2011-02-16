@@ -90,8 +90,8 @@ bool bst_search(bst_node_t *root, bst_elem_t elem) {
     }
 }
 
-bool bst_delete(bst_node_t *root, bst_elem_t elem, mpool_t **pool) {
-    return true;
+static bst_node_t *bst_search_parent() {
+
 }
 
 void bst_destroy(mpool_t *pool) {

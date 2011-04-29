@@ -39,18 +39,16 @@
 static bst_node_t *bst_node_create(bst_elem_t elem, mpool_t **pool);
 
 static bst_node_t *bst_node_create(bst_elem_t elem, mpool_t **pool) {
-    bst_node_t *root;
-    root = mpool_alloc(sizeof(*root), *pool);
-    root->left  = NULL;
-    root->right = NULL;
-    root->elem  = elem;
-    return root;
+    bst_node_t *node;
+    node = mpool_alloc(sizeof(*node), *pool);
+    node->left  = NULL;
+    node->right = NULL;
+    node->elem  = elem;
+    return node;
 }
 
 bst_node_t *bst_create(bst_elem_t elem, mpool_t **pool) {
-    bst_node_t *root;
-    root  = bst_node_create(elem, pool);
-    return root;
+    return bst_node_create(elem, pool);
 }
 
 bool bst_insert(bst_node_t *root, bst_elem_t elem, mpool_t **pool) {
@@ -90,13 +88,6 @@ bool bst_search(bst_node_t *root, bst_elem_t elem) {
     }
 }
 
-static bst_node_t *bst_search_parent() {
-
-}
-
 void bst_destroy(mpool_t *pool) {
     mpool_destroy(pool);
 }
-
-
-
